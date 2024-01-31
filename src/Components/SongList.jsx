@@ -19,14 +19,14 @@ const SongList = ({
   const { isplaying, currentSong, playMusic } = useContext(musicContext);
 
   return (
-    <div className="flex justify-between items-center w-[83vw] lg:w-[50vw] mb-2 lg:mb-1 p-1 px-3 hover:bg-white hover:shadow-md">
+    <div className="flex justify-between items-center w-[80vw] lg:w-[50vw] mb-2 lg:mb-1 p-1 px-3 hover:bg-white hover:shadow-md">
       <GoPlay
         className="text-3xl text-gray-500 hover:text-gray-700 transition-all ease-in-out duration-300 cursor-pointer"
         onClick={() =>
           playMusic(downloadUrl, name, duration, image, id, primaryArtists)
         }
       />
-      <div className="flex flex-col lg:flex-row justify-between items-center w-[80] ">
+      <div className="flex flex-col lg:flex-row justify-between items-start w-[80%] ">
         <span
           className={`font-bold text-md ${
             id === currentSong?.id && "text-[#46c7b6ff]"

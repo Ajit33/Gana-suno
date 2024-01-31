@@ -45,7 +45,35 @@ function App() {
     }
   };
 
-  
+const nextSong=()=>{
+  if(currentSong){
+    const idx=songs.findIndex((song)=>song.id===currentSong.id)
+    if(idx===songs.length-1){
+      const { downloadUrl, name, duration, image, id, primaryArtists } =songs[0]
+      playMusic( downloadUrl, name, duration, image, id, primaryArtists )
+    }
+    else{
+      const { downloadUrl, name, duration, image, id, primaryArtists } =songs[idx+1]
+      playMusic( downloadUrl, name, duration, image, id, primaryArtists )
+    }
+  }
+}
+const prevSong=()=>{
+  if(currentSong){
+    const idx=songs.findIndex((song)=>song.id===currentSong.id)
+    if(idx===0){
+      const { downloadUrl, name, duration, image, id, primaryArtists } =songs[songs.length-1]
+      playMusic( downloadUrl, name, duration, image, id, primaryArtists )
+    }
+    else{
+      const { downloadUrl, name, duration, image, id, primaryArtists } =songs[idx-1]
+      playMusic( downloadUrl, name, duration, image, id, primaryArtists )
+    }
+  }
+}
+
+
+
   return (
     <musicContext.Provider
       value={{
@@ -54,7 +82,9 @@ function App() {
         playMusic,
         isplaying,
         setCurrentSong,
-        currentSong
+        currentSong,
+        nextSong,
+        prevSong
       }}
     >
       <BrowserRouter>
