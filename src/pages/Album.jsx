@@ -5,6 +5,7 @@ import musicContext from "../context/MusicContext";
 import Navbar from "../Components/Navbar";
 import Player from "../Components/Player";
 import SongList from "../Components/SongList";
+import Searchsection from "../Components/Searchsection";
 
 const Album = () => {
   const { setSongs } = useContext(musicContext);
@@ -26,7 +27,7 @@ const Album = () => {
   return (
     <>
       <Navbar />
-
+      <Searchsection />
       <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-24 h-screen  lg:my-0 mx-2 lg:mx-auto">
         <div>
           <img
