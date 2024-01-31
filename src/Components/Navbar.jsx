@@ -7,7 +7,7 @@ const Navbar = () => {
    <nav className="flex justify-between items-center py-3 border-none lg:border px-2 fixed top-0 left-0 right-0 bg-[#f5f5f5ff] z-20 relative">
     <div className="flex flex-col lg:flex-row justify-between items-center mx-auto lg:mx-0">
         <div className="flex justify-between items-center gap-2 mr-4">
-            <Link href="/" className="font-extrabold text-lg ">GanaSuno</Link>
+            <Link to="/" className="font-extrabold text-lg ">GanaSuno</Link>
         </div>
         <div className="flex text-[24px] lg:text-[15px] gap-5 text-gray-600 font-semibold h-full">
             <li className="list-none">Music</li>
